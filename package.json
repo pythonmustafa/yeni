@@ -1,7 +1,6 @@
 {
-  "name": "express-site",
+  "name": "express-full",
   "version": "1.0.0",
-  "description": "Basit Express.js sitesi",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
