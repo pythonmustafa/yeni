@@ -1,0 +1,12 @@
+{
+  "name": "express-site",
+  "version": "1.0.0",
+  "description": "Basit Express.js sitesi",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
