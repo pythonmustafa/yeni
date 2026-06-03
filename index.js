@@ -10,7 +10,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/deneme", (req, res) => {
-  res.sendFile("deneme sayfası");
+  res.send("deneme sayfası");
 });
 
 const PORT = process.env.PORT || 3000;
