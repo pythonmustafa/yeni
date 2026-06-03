@@ -1,20 +1,40 @@
 const express = require("express");
-const path = require("path");
 
 const app = express();
 
+app.use(express.json());
+
+// 📌 Statik site (frontend)
 app.use(express.static("public"));
 
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
+// 📌 API - test
+app.get("/api", (req, res) => {
+  res.json({
+    status: "ok",
+    message: "API çalışıyor 🚀"
+  });
 });
 
-app.get("/deneme", (req, res) => {
-  res.send("deneme sayfası");
+// 📌 API - kullanıcılar
+app.get("/api/users", (req, res) => {
+  res.json([
+    { id: 1, name: "Ali" },
+    { id: 2, name: "Ayşe" }
+  ]);
+});
+
+// 📌 API - veri alma (POST)
+app.post("/api/users", (req, res) => {
+  const user = req.body;
+
+  res.json({
+    message: "Kullanıcı alındı",
+    user: user
+  });
 });
 
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-  console.log(`Sunucu ${PORT} portunda çalışıyor`);
+  console.log(`Server çalışıyor: ${PORT}`);
 });
