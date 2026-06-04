@@ -11,6 +11,19 @@ export default function CariYonetimi() {
   };
 
   return (
+    <Box sx={{ flexGrow: 1 }}>
+      {/* Üst Navigasyon Menüsü */}
+      <AppBar position="static" color="primary" elevation={2}>
+        <Toolbar>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontWeight: 'bold' }}>
+            Kurumsal Yönetim Paneli
+          </Typography>
+          <Button color="inherit" onClick={() => navigate('/')}>
+            Çıkış Yap
+          </Button>
+        </Toolbar>
+      </AppBar>
+      
     <Container maxWidth="lg" sx={{ mt: 4 }}>
       <Typography variant="h4" gutterBottom sx={{ fontWeight: 'bold' }}>
         Cari Hesap Yönetimi
