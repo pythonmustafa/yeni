@@ -8,7 +8,7 @@ export default function Dashboard() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       {/* Üst Navigasyon Menüsü */}
-      <AppBar position="static" color="success" elevation={2}>
+      <AppBar position="static" color="primary" elevation={2}>
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontWeight: 'bold' }}>
             Kurumsal Yönetim Paneli
