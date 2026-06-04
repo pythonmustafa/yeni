@@ -18,7 +18,7 @@ export default function CariYonetimi() {
       <AppBar position="static" color="primary" elevation={2}>
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontWeight: 'bold' }}>
-            Kurumsal Yönetim Paneli
+            Cari Hesap Yönetimi
           </Typography>
           <Button color="inherit" onClick={() => navigate('/')}>
             Çıkış Yap
@@ -27,9 +27,6 @@ export default function CariYonetimi() {
       </AppBar>
     
       <Container maxWidth="lg" sx={{ mt: 4 }}>
-        <Typography variant="h4" gutterBottom sx={{ fontWeight: 'bold' }}>
-          Cari Hesap Yönetimi
-        </Typography>
         
         <Paper elevation={2} sx={{ width: '100%', mt: 2 }}>
           {/* Sekme Başlıkları */}
