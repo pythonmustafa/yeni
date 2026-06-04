@@ -29,6 +29,16 @@ export default function Dashboard() {
             Özelleştirilebilir form yapıları ve dinamik veri tabloları bu alana yerleştirilecek.
           </Typography>
         </Paper>
+        
+        {/* Buton buraya eklendi, yorum satırı JSX formatına uygun hale getirildi */}
+        <Button 
+          variant="contained" 
+          color="secondary" 
+          sx={{ mt: 3, width: 'fit-content' }}
+          onClick={() => navigate('/cari')}
+        >
+          Cari Yönetimi Modülüne Git
+        </Button>
       </Container>
     </Box>
   );
