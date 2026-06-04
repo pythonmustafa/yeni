@@ -25,7 +25,7 @@ export default function CariYonetimi() {
           </Button>
         </Toolbar>
       </AppBar>
-      
+    </Box>
     <Container maxWidth="lg" sx={{ mt: 4 }}>
       <Typography variant="h4" gutterBottom sx={{ fontWeight: 'bold' }}>
         Cari Hesap Yönetimi
