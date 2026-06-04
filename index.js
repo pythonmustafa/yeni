@@ -1,5 +1,4 @@
-// index.js
-require('dotenv').config(); // .env dosyasını okumak için
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
@@ -16,31 +15,32 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 app.use(cors());
 app.use(express.json());
 
-// --- YENİ EKLENEN API: Carileri Getir ---
+// ==========================================
+// 1. ÖNCE API ROTALARI BURAYA YAZILMALIDIR
+// ==========================================
 app.get('/api/cariler', async (req, res) => {
   try {
-    // Supabase'den cariler tablosundaki tüm verileri çekiyoruz
-    const { data, error } = await supabase
-      .from('cariler')
-      .select('*');
-
+    const { data, error } = await supabase.from('cariler').select('*');
     if (error) throw error;
-    
-    // Veriyi React'e gönderiyoruz
     res.json(data);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 });
 
-// React projesinin derlenmiş dosyalarını statik olarak sunar
+// ==========================================
+// 2. SONRA REACT (FRONTEND) DOSYALARI SUNULMALIDIR
+// ==========================================
 app.use(express.static(path.join(__dirname, 'client/dist')));
 
-// API haricindeki tüm istekleri React'e yönlendirir
+// ==========================================
+// 3. EN SON REACT ROUTER YÖNLENDİRMESİ YAPILMALIDIR
+// ==========================================
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'client/dist', 'index.html'));
 });
 
+// Sunucuyu başlat
 app.listen(PORT, () => {
   console.log(`Sunucu ${PORT} portunda çalışıyor...`);
 });
