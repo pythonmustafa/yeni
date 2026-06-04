@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Box, Container, Tab, Tabs, Typography, Paper } from '@mui/material';
 import CariKartFormu from '../components/CariKartFormu';
 import CariHareketTablosu from '../components/CariHareketTablosu';
+import { useNavigate } from 'react-router-dom';
 
 export default function CariYonetimi() {
   const [activeTab, setActiveTab] = useState(0);
