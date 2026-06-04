@@ -13,7 +13,9 @@ export default function CariYonetimi() {
   };
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    
+    <Container maxWidth="lg" sx={{ mt: 4 }}>
+      <Box sx={{ flexGrow: 1 }}>
       {/* Üst Navigasyon Menüsü */}
       <AppBar position="static" color="primary" elevation={2}>
         <Toolbar>
@@ -25,8 +27,7 @@ export default function CariYonetimi() {
           </Button>
         </Toolbar>
       </AppBar>
-    </Box>
-    <Container maxWidth="lg" sx={{ mt: 4 }}>
+      </Box>
       <Typography variant="h4" gutterBottom sx={{ fontWeight: 'bold' }}>
         Cari Hesap Yönetimi
       </Typography>
