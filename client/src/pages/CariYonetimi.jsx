@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { AppBar, Toolbar, Button, Box, Container, Tab, Tabs, Typography, Paper } from '@mui/material';
+import { Box, Container, Tab, Tabs, Typography, Paper } from '@mui/material';
+
+// Bileşenlerimizi içe aktarıyoruz
+import CariListesi from '../components/CariListesi';
 import CariKartFormu from '../components/CariKartFormu';
 import CariHareketTablosu from '../components/CariHareketTablosu';
-import { useNavigate } from 'react-router-dom';
 
 export default function CariYonetimi() {
-  const navigate = useNavigate();
+  // activeTab'i varsayılan olarak 0 (Cari Listesi) yapıyoruz
   const [activeTab, setActiveTab] = useState(0);
 
   const handleTabChange = (event, newValue) => {
@@ -13,37 +15,33 @@ export default function CariYonetimi() {
   };
 
   return (
-     <Box sx={{ flexGrow: 1 }}>
-      {/* Üst Navigasyon Menüsü */}
-      <AppBar position="static" color="primary" elevation={2}>
-        <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontWeight: 'bold' }}>
-            Cari Hesap Yönetimi
-          </Typography>
-          <Button color="inherit" onClick={() => navigate('/')}>
-            Çıkış Yap
-          </Button>
-        </Toolbar>
-      </AppBar>
-    
-      <Container maxWidth="lg" sx={{ mt: 4 }}>
-        
-        <Paper elevation={2} sx={{ width: '100%', mt: 2 }}>
-          {/* Sekme Başlıkları */}
-          <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-            <Tabs value={activeTab} onChange={handleTabChange} aria-label="cari islemleri">
-              <Tab label="Cari Kart Bilgileri" />
-              <Tab label="Cari Hareketler (Ekstre)" />
-            </Tabs>
-          </Box>
-  
-          {/* Sekme İçerikleri */}
-          <Box sx={{ p: 3 }}>
-            {activeTab === 0 && <CariKartFormu />}
-            {activeTab === 1 && <CariHareketTablosu />}
-          </Box>
-        </Paper>
-      </Container>
-    </Box>
+    <Container maxWidth="lg" sx={{ mt: 4 }}>
+      <Typography variant="h4" gutterBottom sx={{ fontWeight: 'bold' }}>
+        Cari Hesap Yönetimi
+      </Typography>
+      
+      <Paper elevation={2} sx={{ width: '100%', mt: 2 }}>
+        {/* Sekme Başlıkları */}
+        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+          <Tabs value={activeTab} onChange={handleTabChange}>
+            <Tab label="Cari Listesi" />
+            <Tab label="Yeni Cari Ekle" />
+            <Tab label="Cari Hareketler (Ekstre)" />
+          </Tabs>
+        </Box>
+
+        {/* Sekme İçerikleri */}
+        <Box sx={{ p: 3 }}>
+          {/* 0. Sekme: Supabase'den gelen gerçek veriler */}
+          {activeTab === 0 && <CariListesi />}
+          
+          {/* 1. Sekme: Yeni kayıt formu */}
+          {activeTab === 1 && <CariKartFormu />}
+          
+          {/* 2. Sekme: Şimdilik statik olan ekstre tablosu */}
+          {activeTab === 2 && <CariHareketTablosu />}
+        </Box>
+      </Paper>
+    </Container>
   );
 }
