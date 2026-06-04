@@ -1,0 +1,8 @@
+# Şifreler ve ortam değişkenleri
+.env
+
+# Bağımlılıklar (Çok büyük klasör)
+node_modules/
+
+# İşletim sistemi kalıntıları
+.DS_Store
