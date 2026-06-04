@@ -28,9 +28,7 @@ export default function Dashboard() {
           <Typography variant="body1" color="text.secondary" sx={{ mt: 2 }}>
             Özelleştirilebilir form yapıları ve dinamik veri tabloları bu alana yerleştirilecek.
           </Typography>
-        </Paper>
-        
-        {/* Buton buraya eklendi, yorum satırı JSX formatına uygun hale getirildi */}
+          {/* Buton buraya eklendi, yorum satırı JSX formatına uygun hale getirildi */}
         <Button 
           variant="contained" 
           color="secondary" 
@@ -39,6 +37,7 @@ export default function Dashboard() {
         >
           Cari Yönetimi Modülüne Git
         </Button>
+        </Paper> 
       </Container>
     </Box>
   );
