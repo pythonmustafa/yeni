@@ -22,7 +22,7 @@ export default function Home() {
             Sisteme Giriş
           </Typography>
           <Typography variant="body2" color="text.secondary" align="center" sx={{ mb: 3 }}>
-            Lütfen yönetim paneline erişmek için devam edin. stackblitz.
+            Lütfen yönetim paneline erişmek için devam edin.
           </Typography>
           <Button
             fullWidth
